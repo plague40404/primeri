@@ -63,7 +63,53 @@ html {
 /* Responsive Overrides */
 @media (max-width: 1024px) {
     h1 {
-        font-size: 3.5rem;
-        line-height: 1.2;
+        font-size: 3rem;
+        line-height: 1.1;
     }
+    
+    section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .aspect-square {
+        aspect-ratio: 1 / 1;
+        height: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .px-12 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+/* Mobile Menu Transitions */
+#mobile-menu {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-link {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.mobile-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-brown);
+    transition: width 0.3s ease;
+}
+
+.mobile-link:hover::after {
+    width: 100%;
 }
